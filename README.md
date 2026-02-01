@@ -10,7 +10,7 @@ Pixelizer applies the following steps in order:
 4. Applies dithering to blend the colors.
 5. While keeping each pixel square, scales up the image.
 
-Palettes sourced from [Lospec's palette allery](hhttps://lospec.com/palette-list).
+Palettes sourced from [Lospec's palette gallery](hhttps://lospec.com/palette-list).
 
 ## Install
 
