@@ -1,0 +1,11 @@
+decorator==5.2.1
+hitherdither @ git+https://www.github.com/hbldh/hitherdither@0f3bbc44595aea2a20c4b96d8f536b05ac34e2a1
+ImageIO==2.37.2
+imageio-ffmpeg==0.6.0
+moviepy==2.2.1
+numpy==2.4.1
+pillow==11.3.0
+proglog==0.1.12
+python-dotenv==1.2.1
+PyYAML==6.0.3
+tqdm==4.67.2
