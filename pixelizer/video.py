@@ -13,8 +13,7 @@ def pixelate_video(
     scale: int = 4,
     palette: str | None = None,
     palette_file: str | None = None,
-    dither: int = 3,
-    dither_type: str = "floyd",
+    dither: str = "b3",
     exposure: float = 1.0,
     contrast: float = 1.0,
 ) -> None:
@@ -27,7 +26,6 @@ def pixelate_video(
             scale=scale,
             palette=get_palette(palette_file, palette),
             dither=dither,
-            dither_type=dither_type,
             exposure=exposure,
             contrast=contrast,
         )
@@ -46,6 +44,5 @@ def pixelate_video(
             scale=scale,
             palette=palette,
             dither=dither,
-            dither_type=dither_type,
         )
     )

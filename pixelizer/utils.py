@@ -15,16 +15,23 @@ def process(data: PixelateData) -> PixelateData:
     return data
 
 
-def get_palette(file: str | None, name: str | None) -> list:
-    """Load palette from file or return default palette."""
+def get_palette(palette_file: str | None, palette_name: str | None) -> list:
+    """Load palette from file or return default palette.
+
+    Parameters:
+    - palette_file: path to YAML file containing palettes (or None)
+    - palette_name: name of the palette (or None)
+    """
 
     palette = DEFAULT_PALETTE
-    if file and name:
-        palettes = load_palettes(file)
-        if name not in palettes:
-            raise ValueError(f"Palette '{name}' not found in file '{file}'.")
+    if palette_file and palette_name:
+        palettes = load_palettes(palette_file)
+        if palette_name not in palettes:
+            raise ValueError(
+                f"Palette '{palette_name}' not found in file '{palette_file}'."
+            )
 
-        palette = palettes[name]
+        palette = palettes[palette_name]
 
     return sort_by_brightness([convert_hex_to_rgb(color) for color in palette])
 

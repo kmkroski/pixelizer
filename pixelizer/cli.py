@@ -11,6 +11,12 @@ def get_function(mode: str):
     elif mode == "video":
         pixelate = pixelate_video
 
+    elif mode == "live":
+        # import here to avoid requiring cv2 for non-live usage
+        from .live import pixelate_live
+
+        pixelate = pixelate_live
+
     return pixelate
 
 
@@ -28,7 +34,8 @@ def get_arguments() -> Namespace:
     parser.add_argument(
         "input",
         type=str,
-        help="Path to input file",
+        nargs="?",
+        help="Path to input file (optional for live mode)",
     )
     parser.add_argument(
         "--output",
@@ -59,8 +66,9 @@ def get_arguments() -> Namespace:
         help="Palette name",
     )
     parser.add_argument(
-        "--palette_file",
+        "--palette-file",
         "-pf",
+        dest="palette_file",
         type=str,
         default="palettes.yml",
         help="Path to custom palette file",
